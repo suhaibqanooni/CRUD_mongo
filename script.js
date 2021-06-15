@@ -10,7 +10,7 @@ const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-acce
 
 
 //mongodb://localhost/faculty
-mongoose.connect('mongodb+srv://suhaibqanooni:humtum804@faculty.7tcmb.mongodb.net/faculty?retryWrites=true&w=majority',{useNewUrlParser: true})
+mongoose.connect('mongodb+srv://suhaibqanooni:humtum804@students.7tcmb.mongodb.net/faculty?retryWrites=true&w=majority',{useNewUrlParser: true})
     .then(() => console.log('connect to MongoDB'))
     .catch(err => console.error('Could not Connect to MongoDB...'));
 
