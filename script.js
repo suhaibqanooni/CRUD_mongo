@@ -8,9 +8,9 @@ const bodyparser =require('body-parser');
 const Handlebars = require('handlebars')
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 
+const MONGODB_URL = "mongodb+srv://suhaibqanooni:humtum804@students.7tcmb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
-//mongodb://localhost/faculty
-mongoose.connect('mongodb+srv://suhaibqanooni:humtum804@students.7tcmb.mongodb.net/faculty?retryWrites=true&w=majority',{useNewUrlParser: true})
+mongoose.connect(MONGODB_URL || 'mongodb://localhost/faculty',{useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => console.log('connect to MongoDB'))
     .catch(err => console.error('Could not Connect to MongoDB...'));
 
