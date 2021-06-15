@@ -1,0 +1,36 @@
+
+<h3><a class="btn btn-secondary" href="/api/faculty"><i class="fa fa-plus"></i> Add New</a> Students List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Course Code</th>
+            <th>Phone Number</th>
+            <th>Action</th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr style="color: white;">
+            <td>{{this.facultyID}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.gender}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.address.street_address}},{{this.address.city}},{{this.address.country}}</td>
+            <td>{{this.course_code}}</td>
+            <td>{{this.phone_number}}</td>
+
+            <td>
+                <a href="/api/faculty/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/api/faculty/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

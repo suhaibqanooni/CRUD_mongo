@@ -1,0 +1,62 @@
+<marquee style="font-size: 20px; font-weight:bold; font-family:'Times New Roman'; color:yellow;">Here you can add a student Record!!!</marquee>
+<hr>
+<h3 style="color: yellow; font-family: 'Times New Roman';">{{viewTitle}}</h3>
+
+<form action="/api/faculty" method="POST" autocomplete="off">
+    <input style="color:white; background: none; border:1px solid black;" type="hidden" name="_id" value="{{Faculty._id}}">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Student ID</label>
+            <input style="color:white; background: none; border:1px solid black;" type="text" class="form-control" name="facultyID" placeholder="Enter ID in numbers" value="{{Faculty.facultyID}}">
+            <div class="text-danger"> {{Faculty.facultyIDError}} </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Name</label>
+            <input style="color:white; background: none; border:1px solid black;" type="text" class="form-control" name="name" placeholder="Name" value="{{Faculty.name}}">
+            <div class="text-danger"> {{Faculty.nameError}} </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Gender</label>
+        <input style="color:white; background: none; border:1px solid black;" type="text" class="form-control" name="gender" placeholder="Gender" value="{{Faculty.gender}}">
+        <div class="text-danger">{{Faculty.genderError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input style="color:white; background: none; border:1px solid black;" type="text" class="form-control" name="email" placeholder="Email" value="{{Faculty.email}}">
+        <div class="text-danger"> {{Faculty.emailError}} </div>
+    </div>
+    <div class="form-group">
+        <label>Address</label>
+        <div class="form-group col-md-6">
+            <input style="color:white; background: none; border:1px solid black;" type="text" class="form-control" name="street_address" placeholder="Street Address" value="{{Faculty.address.street_address}}">
+            <div class="text-danger"> {{Faculty.street_addressError}} </div>
+        </div>
+        <div class="form-group col-md-6">
+            <input style="color:white; background: none; border:1px solid black;" type="text" class="form-control" name="city" placeholder="City" value="{{Faculty.address.city}}">
+            <div class="text-danger"> {{Faculty.cityError}} </div>
+        </div>
+         <div class="form-group col-md-6">
+            <input style="color:white; background: none; border:1px solid black;" type="text" class="form-control" name="country" placeholder="Country" value="{{Faculty.address.country}}">
+            <div class="text-danger"> {{Faculty.countryError}} </div>
+        </div>
+    </div>
+     
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Course Code</label>
+            <input style="color:white; background: none; border:1px solid black;" type="text" class="form-control" name="course_code" placeholder="Course Code" value="{{Faculty.course_code}}">
+            <div class="text-danger"> {{Faculty.course_codeError}} </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Cell Number</label>
+            <input style="color:white; background: none; border:1px solid black;" type="text" class="form-control" name="phone_number" placeholder="Cell Number" value="{{Faculty.phone_number}}">
+            <div class="text-danger"> {{Faculty.phone_numberError}} </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Add</button>
+        <a class="btn btn-secondary" href="/api/faculty/list"><i class="fa fa-list-alt"></i> Show All </a>
+    </div>
+</form>
